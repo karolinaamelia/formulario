@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load bootstrap4 %}
+
+<title>Formulários</title>
+{% bootstrap_css %}
+
+{% block content %}
+        <div class="container">
+            <h1>Formulários</h1>
+            {% bootstrap_messages %}
+
+            <form method="post" class="form" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <input type="submit" class="btn btn-primary" value="Salvar">
+                {% endbuttons %}
+            </form>
+        </div>
+{% endblock %}
+{% bootstrap_javascript jquery='full' %}
